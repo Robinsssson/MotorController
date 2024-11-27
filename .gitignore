@@ -5,3 +5,4 @@
 lib/*.a
 data-process/*.txt
 STM32F10x_StdPeriph_Lib_V3.6.0/
+*.json
