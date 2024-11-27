@@ -48,13 +48,15 @@ target("motor_controller")
     add_files("STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/STM32F10x_StdPeriph_Driver/src/*.c")
     -- 链接库
     add_links("m", "c") -- 数学库、标准库
-
+    add_sysincludedirs("/opt/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include")
     -- 包含目录
-    add_includedirs("include")
-    add_includedirs("3rdparty")
-    add_includedirs("STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/CMSIS/CM3/CoreSupport/")
-    add_includedirs("STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/")
-    add_includedirs("STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/STM32F10x_StdPeriph_Driver/inc/")
+    add_includedirs(
+        "include","3rdparty", 
+        "STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/CMSIS/CM3/CoreSupport/", 
+        "STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/",
+        "STM32F10x_StdPeriph_Lib_V3.6.0/Libraries/STM32F10x_StdPeriph_Driver/inc/",
+        {public = true}
+    )
 
     -- 添加依赖项
     add_deps("3rd_pid", "3rd_cjson")

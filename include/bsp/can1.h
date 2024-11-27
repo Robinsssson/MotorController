@@ -1,6 +1,6 @@
 #ifndef __CAN1__H__
 #define __CAN1__H__
-#include <stm32f10x_can.h>
+#include "stm32f10x_can.h"
 #include <stm32f10x_rcc.h>
 #include <stm32f10x_gpio.h>
 #include <stm32f10x_tim.h>
