@@ -1,0 +1,51 @@
+# 使用LLVM风格作为基础
+BasedOnStyle: LLVM
+
+# 语言设置，确保配置文件适用于C语言
+Language: Cpp
+
+# 代码缩进配置
+IndentWidth: 4         # 缩进宽度为4个空格
+TabWidth: 4            # Tab宽度为4个空格
+UseTab: Never          # 永远不使用Tab，统一使用空格
+
+# 控制结构格式
+AllowShortIfStatementsOnASingleLine: false  # 不允许短if语句在单行上
+BreakBeforeBraces: Linux                    # 在Linux风格中，大括号前换行
+AlwaysBreakAfterReturnType: None            # 函数返回类型之后不强制换行
+AlwaysBreakBeforeMultilineStrings: false    # 不强制在多行字符串前换行
+
+# 空格配置
+SpaceBeforeParens: ControlStatements  # 在控制语句中的括号前添加空格
+SpaceAfterCStyleCast: true            # 在C风格类型转换后添加空格
+
+# 对齐设置
+AlignTrailingComments: true  # 对齐尾随注释
+AlignOperands: true          # 对齐操作数
+AlignConsecutiveAssignments: true  # 对齐连续的赋值语句
+AlignConsecutiveDeclarations: true # 对齐连续的声明
+
+# 列宽设置
+ColumnLimit: 120              # 每行代码限制在80列以内
+PenaltyExcessCharacter: 100  # 超过列宽限制的惩罚分数
+
+# 列表和数组格式
+BinPackParameters: true  # 函数参数按列打包
+BinPackArguments: true   # 函数实参按列打包
+
+# 注释格式
+ReflowComments: true  # 自动调整注释格式
+CommentPragmas: '^ IWYU pragma:'  # 特定注释开头不调整格式
+
+# 宏定义格式
+IndentPPDirectives: AfterHash  # 预处理指令在#号后缩进
+MacroBlockBegin: '{'           # 宏定义块的开始符号
+MacroBlockEnd: '}'             # 宏定义块的结束符号
+
+# 其他设置
+SortIncludes: true  # 按字典顺序排序包含文件
+SortUsingDeclarations: true  # 按字典顺序排序using声明
+PointerAlignment: Left  # 指针和引用符号与类型左对齐
+
+# 排除特定文件或目录
+IncludeIsMainSourceRegex: '(test|Test)'  # 排除包含“test”或“Test”的文件

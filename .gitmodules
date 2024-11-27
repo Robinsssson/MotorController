@@ -1,0 +1,6 @@
+[submodule "3rdparty/pid"]
+	path = 3rdparty/pid
+	url = https://github.com/pms67/PID.git
+[submodule "3rdparty/cjson"]
+	path = 3rdparty/cjson
+	url = git@github.com:DaveGamble/cJSON.git
