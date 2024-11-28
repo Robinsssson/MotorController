@@ -7,21 +7,12 @@
 #include "mirco_lib/mirco_delay.h"
 #include <app.h>
 #include <device/mpu6050.h>
-#include <math.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "pid/PID.h"
 
-/* Controller parameters */ // 2*4.8/1.755714285714286=5.467860048820178 	Kp Tu / 8 = 4.8 * 1.755714285714286 / 8
-                            // = 1.053428571428572
-// #define PID_KP 5.0f
-// #define PID_KI 1.6f
-// #define PID_KD 0.5f
-// #define PID_KP1 3.5f
-// #define PID_KI1 1.2f
-// #define PID_KD1 0.2f
 #define PID_KP1 3.5f
 #define PID_KI1 1.2f
 #define PID_KD1 0.0f
@@ -42,8 +33,7 @@
 
 #define SAMPLE_TIME_S 0.1f
 
-/* Simulated dynamical system (first order) */
-float             TestSystem_Update(float inp);
+
 PIDController     pidControllerMotor1, pidControllerMotor2;
 extern mf4010v2_t motor1, motor2;
 /* private functions declaration */

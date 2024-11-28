@@ -1,5 +1,5 @@
 # Project configuration
-PROJECT ?= template
+PROJECT ?= motor_controller
 CC = arm-none-eabi-gcc.exe
 LD = arm-none-eabi-gcc.exe
 OBJCOPY = arm-none-eabi-objcopy.exe
